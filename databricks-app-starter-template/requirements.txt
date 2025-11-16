@@ -1,0 +1,17 @@
+# FastAPI and server
+fastapi>=0.115
+uvicorn[standard]>=0.30
+orjson>=3.10
+pydantic-settings>=2.0
+
+# Databricks
+databricks-sql-connector>=2.9
+databricks-sdk>=0.33
+
+# Data processing
+pandas>=2.2
+pyarrow>=15
+numpy<2.0,>=1.23
+
+# HTTP client
+httpx>=0.28

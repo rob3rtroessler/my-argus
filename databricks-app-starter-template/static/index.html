@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta
+    name="viewport"
+    content="width=device-width,initial-scale=1,viewport-fit=cover"
+  />
+  <title>Databricks App · Starter</title>
+  <link rel="stylesheet" href="/static/css/styles.css" />
+</head>
+<body>
+  <header class="appbar">
+    <h1>Databricks App · Starter</h1>
+    <span class="spacer"></span>
+  </header>
+
+  <main class="container">
+    <section class="grid cols-2">
+      <div class="card">
+        <div class="section-header">
+          <h2>Current User</h2>
+          <span class="pill" id="meMode">—</span>
+        </div>
+        <div class="kv small">
+          <div class="muted">Username</div><div id="meUser">—</div>
+          <div class="muted">Display Name</div><div id="meDisplay">—</div>
+          <div class="muted">Active</div><div id="meActive">—</div>
+        </div>
+        <details>
+          <summary>Raw payload</summary>
+          <pre id="meRaw">—</pre>
+        </details>
+      </div>
+
+      <div class="card">
+        <div class="section-header">
+          <h2>SQL Warehouse</h2>
+          <span class="pill" id="pingOk">—</span>
+        </div>
+        <p class="small muted">Quick connectivity check</p>
+        <button id="refreshPing" class="btn flat">Refresh</button>
+        <div class="progress"><div id="pingBar" class="bar"></div></div>
+        <pre id="pingRaw">—</pre>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="section-header">
+        <h2>Emails</h2>
+        <div class="action-group">
+          <button id="runEmails" class="btn">Run</button>
+          <button id="clearFilters" class="btn flat">Clear</button>
+        </div>
+      </div>
+      <div class="filters cols-3">
+        <div>
+          <label>Subject (contains)</label>
+          <input id="subjectInput" type="text" placeholder="e.g., invoice, welcome" />
+        </div>
+        <div>
+          <label>From Email (contains)</label>
+          <input id="fromEmailInput" type="text" placeholder="e.g., support@example.com" />
+        </div>
+        <div>
+          <label>Read Status</label>
+          <select id="isReadSelect">
+            <option value="">All</option>
+            <option value="true">Read</option>
+            <option value="false">Unread</option>
+          </select>
+        </div>
+        <div>
+          <label>Starred Status</label>
+          <select id="isStarredSelect">
+            <option value="">All</option>
+            <option value="true">Starred</option>
+            <option value="false">Not Starred</option>
+          </select>
+        </div>
+      </div>
+      <div class="pill-group">
+        <span class="pill" id="emailCount">rows: —</span>
+        <span class="pill" id="emailTiming">—</span>
+      </div>
+      <div class="progress"><div id="emailBar" class="bar"></div></div>
+      <div id="emailTable" class="table-scroll">—</div>
+      <details>
+        <summary>Raw payload</summary>
+        <pre id="emailRaw">—</pre>
+      </details>
+    </section>
+  </main>
+
+  <script src="/static/js/main.js" defer></script>
+</body>
+</html>

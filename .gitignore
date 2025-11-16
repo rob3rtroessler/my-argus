@@ -1,0 +1,6 @@
+.idea/
+.env
+.venv-argus
+__pycache__/
+argus-app
+

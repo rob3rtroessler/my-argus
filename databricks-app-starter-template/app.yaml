@@ -1,0 +1,29 @@
+# command:
+#   - uvicorn
+#   - app:app
+#   - --host
+#   - 0.0.0.0
+#   - --port
+#   - "8000"
+
+# app.yaml
+
+# How to start your FastAPI server
+command: ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]
+
+# # (Optional) metadata
+# name: cmx-argus-fastapi
+# description: FastAPI app with SQL + OBO
+
+# # Declare a secret resource that points to your scope/key
+# resources:
+#   - name: sql_http_path            # resource name (you choose)
+#     type: secret
+#     scope: argus-app               # your secret scope name
+#     key: sql_http_path             # your secret key in that scope
+
+# Expose env vars to the process.
+# Use valueFrom to map the resource above into the env var your code reads.
+env:
+  - name: DATABRICKS_SQL_HTTP_PATH
+    valueFrom: DATABRICKS_SQL_HTTP_PATH
